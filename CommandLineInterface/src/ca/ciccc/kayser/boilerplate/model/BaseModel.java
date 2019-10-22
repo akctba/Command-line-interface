@@ -3,7 +3,7 @@ package ca.ciccc.kayser.boilerplate.model;
 import ca.ciccc.kayser.boilerplate.controller.BaseController;
 import ca.ciccc.kayser.boilerplate.view.BaseView;
 
-public class BaseModel {
+public abstract class BaseModel {
 	
 	BaseController controller;
 	BaseView view;
