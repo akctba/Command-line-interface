@@ -18,5 +18,8 @@ public abstract class BaseModel {
 	
 	//setController
 	//setView
+	
+	
+	public int somthing;
 
 }
