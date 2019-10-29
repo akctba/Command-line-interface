@@ -86,24 +86,54 @@ public class Application {
 			inputText = kb.nextLine();
 			Console.newLine(2);
 
-			Console.println("You typed " + inputText);
+			Console.println("You typed", inputText);
 			Console.newLine(2);
 
-			if (inputText.equalsIgnoreCase("quit") == true) {
+			if (isToQuit(inputText)) {
 				Console.newLine(2);
-				Console.println("Ending Program " + inputText);
+				Console.println("Ending Program", inputText);
 				_shouldTerminate = true;
 			}
 
-			if (inputText.equalsIgnoreCase("tests") == true) {
+			if (isToTest(inputText)) {
 				Console.newLine(2);
-				Console.println("Running Tests" + inputText);
+				Console.println("Running Tests", inputText);
 				Test.Test_Console_RunAll();
 				Test.Test_MathRunAll();
 			}
 			// will only exit if _shouldTerminate is true
 		} while (_shouldTerminate == false); 
 
+	}
+	
+	/**
+	 * Verify if a command is to exit the application
+	 * @param command
+	 * @return
+	 */
+	private static boolean isToQuit(String command) {
+		String[] exitCommands = {"quit", "exit", "end"};
+		for(String c : exitCommands) {
+			if (c.equalsIgnoreCase(command))
+				return true;
+		}
+		
+		return false; 
+	}
+	
+	/**
+	 * Verify if a command is to run the application tests
+	 * @param command
+	 * @return
+	 */
+	private static boolean isToTest(String command) {
+		String[] exitCommands = {"test", "tests", "verification"};
+		for(String c : exitCommands) {
+			if (c.equalsIgnoreCase(command))
+				return true;
+		}
+		
+		return false; 
 	}
 
 }

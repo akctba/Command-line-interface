@@ -10,6 +10,13 @@ public class Console {
 	public static void println(String message) {
 		System.out.println(message);
 	}
+	
+	public static void println(String message, String ...parameters) {
+		System.out.print(message);
+		for(String s : parameters)
+			System.out.print(" " + s);
+		System.out.println();
+	}
 
 	public static void newLine(int howMany) {
 		for (int i = 0; i < howMany; i++) {
