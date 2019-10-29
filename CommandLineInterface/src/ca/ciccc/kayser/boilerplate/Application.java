@@ -96,10 +96,16 @@ public class Application {
 			}
 
 			if (isToTest(inputText)) {
+				
+				Console.println("The tests will be printed (C)omplete or only (F)ail? (type C or F) ");
+				String type = kb.nextLine();
+				Console.newLine(2);
+				
+				
 				Console.newLine(2);
 				Console.println("Running Tests", inputText);
 				Test.Test_Console_RunAll();
-				Test.Test_MathRunAll();
+				Test.Test_MathRunAll(type.equalsIgnoreCase("F"));
 			}
 			// will only exit if _shouldTerminate is true
 		} while (_shouldTerminate == false); 
