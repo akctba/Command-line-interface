@@ -20,6 +20,4 @@ public abstract class BaseModel {
 	//setView
 	
 	
-	public int somthing;
-
 }
